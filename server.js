@@ -13,7 +13,7 @@ var server = {
 db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '111111',
+    password: '123456',
     database: 'animals_rayyan2'
 })
 
