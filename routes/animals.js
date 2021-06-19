@@ -15,7 +15,7 @@ router.get('/list', function(req, res) {
   })
 });
 
-router.post('/animalInfoByID/:id', function(req, res) {
+router.get('/animalInfoByID/:id', function(req, res) {
   
   let sql = `SELECT * FROM animals where id=${req.params.id}`;
   db.query(sql, function(err, data, fields) {
@@ -24,6 +24,45 @@ router.post('/animalInfoByID/:id', function(req, res) {
       status: 200,
       data,
       message: "Animal is retrieved successfully"
+    })
+  })
+});
+
+router.get('/farmByID/:id', function(req, res) {
+  
+  let sql = `SELECT name FROM farms where id=${req.params.id}`;
+  db.query(sql, function(err, data, fields) {
+    if (err) throw err;
+    res.json({
+      status: 200,
+      data,
+      message: "Farm name is retrieved successfully"
+    })
+  })
+});
+
+router.get('/solalaByID/:id', function(req, res) {
+  
+  let sql = `SELECT name FROM solalat where id=${req.params.id}`;
+  db.query(sql, function(err, data, fields) {
+    if (err) throw err;
+    res.json({
+      status: 200,
+      data,
+      message: "Solala name is retrieved successfully"
+    })
+  })
+});
+
+router.get('/jawdaByID/:id', function(req, res) {
+  
+  let sql = `SELECT name FROM jawda where id=${req.params.id}`;
+  db.query(sql, function(err, data, fields) {
+    if (err) throw err;
+    res.json({
+      status: 200,
+      data,
+      message: "Jawda name is retrieved successfully"
     })
   })
 });
